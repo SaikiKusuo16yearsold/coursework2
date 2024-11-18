@@ -4,6 +4,7 @@ import com.example.coursework2.Question;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ExaminerServiceImpl implements ExaminerService {
     private final QuestionServices questionService;
@@ -13,4 +14,7 @@ public class ExaminerServiceImpl implements ExaminerService {
     }
 
     List<Question> randomQuestion = new ArrayList<>();
+
+
+
 }
