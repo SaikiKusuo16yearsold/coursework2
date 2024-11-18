@@ -11,4 +11,6 @@ public interface QuestionServices {
     Question remove(String QuestionText, String QuestionAnswer);
 
     Set<Question> getAllQuestions();
+
+    int randomNumber(int maximum);
 }
