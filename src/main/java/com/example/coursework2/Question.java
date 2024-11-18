@@ -14,16 +14,15 @@ public class Question {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true; // Проверка на идентичность
-        if (obj == null || getClass() != obj.getClass()) return false; // Проверка на null и тип
-        Question employee = (Question) obj; // Приведение типа
-        return question == employee.question &&
-                answer == employee.answer &&
-                Objects.equals(question, employee.answer);
+        if (obj == null || getClass() != obj.getClass()) return false; // Проверка на null и совпадение классов
+        Question question1 = (Question) obj; // Приведение типа
+        return Objects.equals(question, question1.question) &&
+                Objects.equals(answer, question1.answer); // Сравнение полей
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(question, answer);
+        return Objects.hash(question, answer); // Генерация хеш-кода на основе полей
     }
 }
 
