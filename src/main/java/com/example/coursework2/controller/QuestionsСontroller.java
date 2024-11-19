@@ -2,6 +2,7 @@ package com.example.coursework2.controller;
 
 import com.example.coursework2.Question;
 import com.example.coursework2.service.ExaminerService;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,8 +21,8 @@ public class QuestionsСontroller {
         this.examinerService = examinerService;
     }
 
-    @GetMapping(path = "exam/get")
-    public Set<Question> randomWords(@RequestParam int amount) {
+    @GetMapping(path = "/exam/get/{amount}")
+    public Set<Question> randomWords(@PathVariable int amount) throws BadRequestException {
         return examinerService.getQuestions(amount);
     }
 }

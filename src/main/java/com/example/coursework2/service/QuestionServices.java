@@ -12,5 +12,6 @@ public interface QuestionServices {
 
     Set<Question> getAllQuestions();
 
-    int randomNumber(int maximum);
+    int getRandomQuestion(int maximum);
+
 }

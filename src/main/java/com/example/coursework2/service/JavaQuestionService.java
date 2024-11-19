@@ -29,8 +29,9 @@ public class JavaQuestionService implements QuestionServices {
     public Set<Question> getAllQuestions() {
         return allQuestions;
     }
+
     @Override
-    public int randomNumber(int maximum) {
+    public int getRandomQuestion(int maximum) {
         Random random = new Random();
         return random.nextInt(maximum);
     }

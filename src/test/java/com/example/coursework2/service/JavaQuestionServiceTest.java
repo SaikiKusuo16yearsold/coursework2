@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class JavaQuestionServiceTest {
 
@@ -30,7 +30,7 @@ public class JavaQuestionServiceTest {
         out.remove("Дмитрий", "Даванков");
         assertEquals(1, out.getAllQuestions().size());
         for (Question question : out.getAllQuestions()) {
-            assertTrue(question.equals(new Question("Дмитрий", "Даванков1")));
+            assertEquals(question, new Question("Дмитрий", "Даванков1"));
         }
     }
 

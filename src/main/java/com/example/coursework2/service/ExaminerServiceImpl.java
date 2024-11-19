@@ -1,9 +1,12 @@
 package com.example.coursework2.service;
 
 import com.example.coursework2.Question;
+import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
@@ -14,20 +17,18 @@ public class ExaminerServiceImpl implements ExaminerService {
     }
 
 
-
     @Override
-    public Set<Question> getQuestions(int number) {
+    public Set<Question> getQuestions(int number) throws BadRequestException {
         List<Question> allQuestions = new ArrayList<>(questionService.getAllQuestions());
 
         if (number > allQuestions.size()) {
-            throw new RuntimeException("Number of questions is greater than the number of questions");
+            throw new BadRequestException("Number of questions is greater than the number of questions");
         }
 
         Set<Question> randomQuestions = new HashSet<>();
-        Random random = new Random();
 
         while (randomQuestions.size() < number) {
-            int index = questionService.randomNumber(allQuestions.size());
+            int index = questionService.getRandomQuestion(allQuestions.size());
             randomQuestions.add(allQuestions.get(index));
         }
 
