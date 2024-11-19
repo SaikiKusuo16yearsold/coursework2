@@ -1,6 +1,6 @@
 package com.example.coursework2.service;
 
-import com.example.coursework2.Question;
+import com.example.coursework2.model.Question;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;

@@ -1,6 +1,6 @@
 package com.example.coursework2.service;
 
-import com.example.coursework2.Question;
+import com.example.coursework2.model.Question;
 import org.apache.coyote.BadRequestException;
 
 import java.util.Set;

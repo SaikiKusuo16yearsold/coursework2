@@ -1,12 +1,10 @@
 package com.example.coursework2.service;
 
-import com.example.coursework2.Question;
+import com.example.coursework2.model.Question;
 import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
